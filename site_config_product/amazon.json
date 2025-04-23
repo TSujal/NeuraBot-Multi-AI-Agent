@@ -1,0 +1,10 @@
+{
+    "product_selectors": ["div[data-component-type='s-search-result']", "div.s-result-item"],
+    "title": "h2 span",
+    "price_whole": "span.a-price-whole",
+    "price_fraction": "span.a-price-fraction",
+    "rating": "span.a-icon-alt",
+    "reviews": "span.a-size-base.s-underline-text",
+    "url": "a.a-link-normal.s-no-outline",
+    "url_prefix": "https://www.amazon.com"
+}

@@ -1,0 +1,13 @@
+{
+    "product_selectors": [
+        "[data-testid=\"item-stack\"] div[data-testid=\"list-view\"]",
+        "[data-testid=\"item-stack\"] div.mb1"
+    ],
+    "title": "span[data-automation-id=\"product-title\"]",
+    "price_whole": "div[data-automation-id=\"product-price\"] span:nth-child(2)",
+    "price_fraction": "",
+    "rating": "span.invalid-rating",
+    "reviews": "span[data-testid=\"product-reviews\"]",
+    "url": "a",
+    "url_prefix": "https://www.walmart.com"
+}

@@ -1,0 +1,7 @@
+{
+    "widget_selectors": [
+        "#s-refinements div.a-section span.a-size-base",
+        "#s-refinements .a-section .a-text-bold",
+        "#s-refinements ul li span.a-list-item"
+    ]
+}

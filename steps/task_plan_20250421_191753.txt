@@ -1,0 +1,20 @@
+Task Plan:
+1. Navigate to https://www.amazon.com
+2. Search for 'lenovo laptop' in the search bar
+3. Filter the results by 'Intel i7' processor
+4. Filter the results by '64GB RAM'
+5. Select a laptop with the desired specifications
+6. Click on the laptop to view its details
+7. Verify the laptop's price and features
+8. Click 'Add to Cart'
+9. Proceed to checkout
+10. Sign in to your Amazon account
+11. Select your delivery address
+12. Choose a delivery option
+13. Review your order details
+14. Enter your payment information
+15. Place your order
+16. Review your order confirmation
+17. Take note of your order number and tracking information
+
+Task Description: The task is to order a lenovo laptop from Amazon with specifications including Intel i7 processor, 64GB RAM, and delivery.

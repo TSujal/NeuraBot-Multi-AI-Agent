@@ -1,0 +1,18 @@
+# Python virtual environment
+venv/
+
+# Sensitive environment variables
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Log files
+manage.log
+
+# Large media files
+*.mkv
+
+# Temporary or unclear files (remove if '3.4' is important)
+3.4

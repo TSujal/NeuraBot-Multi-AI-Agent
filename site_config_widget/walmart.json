@@ -1,0 +1,8 @@
+{
+    "widget_selectors": [
+        "section.expand-collapse-section button[class*='bg-white'][class*='bw0']",
+        "section.expand-collapse-section div[class*='filter'] label",
+        "section.expand-collapse-section ul li span",
+        "section.expand-collapse-section div[class*='facet'] label"
+    ]
+}
