@@ -20,5 +20,7 @@ Run: `python main.py`
 - `main.py`, `manage.py`: Core scripts
 - `test_*.py`: Test scripts
 
+
+
 ## Contributing
-Open issues or pull requests.
+Sujal thakkar
