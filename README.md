@@ -1,97 +1,95 @@
-# 🔍 Multi-Agent Smart Chatbot with Task Planning & Web Automation
+# 🧠 NeuraBot: An Intelligent Multi-Agent LLM Chatbot with Real-Time RAG and Task Execution
 
-This project is a multi-functional AI system that combines a **standard chatbot with RAG (Retrieval-Augmented Generation)** and an **autonomous task execution assistant** capable of interacting with live websites (like Amazon) to perform complex tasks based on user input and contextual understanding.
+NeuraBot is a next-generation intelligent chatbot framework designed for advanced task automation, dynamic planning, and real-time web interaction — powered by multi-agent systems, RAG pipelines, and Playwright-based web automation.
 
 ---
 
-## 🌟 Features
+## 🚀 Key Features
 
-### 🧠 Chatbot with RAG
-- Integrates Retrieval-Augmented Generation using sources like:
+### 🤖 Chatbot with Integrated RAG
+- Built on **LLaMA-3.3-8B**, the primary chatbot uses **Retrieval-Augmented Generation (RAG)** to enrich conversations with up-to-date information from:
   - Wikipedia
   - Google Search
-  - Additional data endpoints (customizable)
-- Offers intelligent conversational abilities with contextual information gathering.
+  - arXiv, PubMed, Reddit, GitHub, and more
+- Supports both **text** and **speech** input, enhancing user accessibility.
 
-### ✅ Checkbox-Enabled Task Agent
-When the checkbox in the Streamlit UI is activated, the system transitions into a **task planning mode**:
-- The chatbot turns into a **task manager agent**.
-- It doesn't immediately act — instead, it:
-  - Asks a series of **follow-up clarification questions**.
-  - Gathers specific details about what the user wants to accomplish.
-  - Builds a complete understanding before initiating any actions.
+### ✅ Dual Chat Modes via Streamlit UI
+- A checkbox in the **Streamlit interface** switches between:
+  - **Standard Chatbot Mode** (RAG-powered)
+  - **Task-Driven Agent Mode** (automation environment)
 
 ---
 
-## 🧩 Agent Workflow Overview
+## 🛠️ Task Automation Workflow
 
-### 1. 🗺️ Task Clarification Phase
-- The **planning agent** keeps asking clarifying questions based on user input.
-- Once satisfied with the answers, it proceeds to generate a **task plan** in structured JSON format.
+In Task Mode, NeuraBot transforms into an intelligent assistant capable of performing real-time actions on websites like **Amazon** or **Walmart**:
 
-### 2. 🌐 Widget Scraping
-- A **widget scraping agent** uses tools (like Playwright) to:
-  - Access the provided webpage (e.g., Amazon).
-  - Scrape all **widgets, filters, and UI elements** visible for the target product.
+### 🧩 Step-by-Step Multi-Agent Pipeline
 
-### 3. 📑 Action Plan Generation
-- The scraped widget data + task data is given to a **planning agent**.
-- This agent:
-  - Creates an **action sequence** for selecting widgets and applying filters on the screen using the Playwright automation library.
+1. **Instruction Agent**
+   - Takes initial user task (e.g., “Find a budget laptop under $600 with SSD”).
+   - Asks follow-up questions until it has enough clarity.
+   - Generates a high-level task plan in JSON format.
 
-### 4. 📦 Product Scraping Agent
-- A dedicated **product scraper agent**:
-  - Uses the selected filters and site context to fetch the **top 10 matching products**.
-  - Stores this product list in a `CSV` file with relevant metadata.
+2. **Widget Scraper Agent**
+   - Navigates to the specified site (e.g., Amazon).
+   - Scrapes page UI elements (filters, buttons, categories) using Playwright.
 
-### 5. 🤖 Match & Decision Agent
-- The **manage agent** compares:
-  - `{user_given_info}` with `{product_Scrap.csv}`
-- It selects the most appropriate product based on match criteria.
+3. **Planning Agent**
+   - Combines `{scraped_widgets}` + `{user_tasks}`.
+   - Generates detailed Playwright action plans for webpage interaction.
 
-### 6. 🛒 Final Automation & Checkout
-- The selected product is:
-  - Re-fed into the **action agent**.
-  - The agent navigates and **adds the product to the cart**.
-  - A **screenshot** of the final state is taken as confirmation.
+4. **Product Scraper Agent**
+   - Executes the plan to collect top 10 matching products.
+   - Saves product details to a `.csv` file.
 
----
+5. **Manager Agent**
+   - Matches `{user_preferences}` with `{product_data.csv}`.
+   - Selects the best match and creates a new action plan.
 
-## ⚙️ Tech Stack
-
-- **Python**
-- **Streamlit** for UI
-- **LangChain Agents**
-- **Playwright** for browser automation
-- **RAG pipelines** (Wikipedia, Google Search)
-- **Multi-Agent Orchestration**
-- **CSV for result tracking**
+6. **Automation Agent**
+   - Uses Playwright + Groq + LLaMA-3.3-70B to:
+     - Add product to cart
+     - Take screenshots
+     - Seamlessly complete interactions
 
 ---
 
-## 🚀 Future Improvements
+## 🧠 Technologies Used
 
-- Add support for multiple e-commerce platforms (Flipkart, Myntra, etc.)
-- Automate user authentication & checkout steps
-- Enhance LLM reasoning with feedback loop integration
-- Store historical plans & decisions for training fine-tuned models
+| Component | Tech Stack |
+|----------|-------------|
+| Language Models | LLaMA 3.3 (8B & 70B), DeepSeek R1 |
+| Frameworks | Streamlit, Playwright |
+| Agents & RAG | LangGraph, DeepSeek-R1, Crawl4AI |
+| Tooling | Groq API, Python, JSON Planning, CSV |
+| Search Integrations | Google, Wikipedia, arXiv, PubMed, GitHub |
+| Automation | Playwright-driven browser automation |
 
 ---
 
-## 💡 Inspiration
+## 🧪 Project Showcase
 
-This project was built to demonstrate how autonomous AI agents can **think, ask questions, and act** just like humans — combining **intelligence, planning, and execution** into one seamless system.
+### ✅ Streamlit UI
+- Real-time UI mode switching (chat ↔️ task).
+- Interactive follow-up for task clarification.
+- Visual feedback loops and screen captures for transparency.
+
 ---
 
-## 🧪 How to Run
+## 📦 Setup Instructions
 
 ```bash
-# Clone repo
-git clone https://github.com/TSujal/NeuraBot-Multi-AI-Agent
+# Clone the repository
+git clone https://github.com/TSujal/NeuraBot.git
+cd NeuraBot
 
-# Install requirements
+# Create a virtual environment
+python -m venv venv
+source venv/bin/activate   # or venv\Scripts\activate on Windows
+
+# Install dependencies
 pip install -r requirements.txt
 
-# Run the app
+# Run the Streamlit app
 streamlit run main.py
-
