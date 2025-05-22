@@ -87,7 +87,7 @@ This project was built to demonstrate how autonomous AI agents can **think, ask 
 
 ```bash
 # Clone repo
-git clone https://github.com/TSujal/YOUR-REPO-NAME.git
+git clone https://github.com/TSujal/NeuraBot-Multi-AI-Agent
 
 # Install requirements
 pip install -r requirements.txt
